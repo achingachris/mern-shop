@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/ChrisAchinga/mern-ecommerce#readme",
   "dependencies": {
+    "axios": "^0.21.0",
     "express": "^4.17.1"
   }
 }
