@@ -1,0 +1,39 @@
+{
+  "name": "mern-ecommerce",
+  "version": "1.0.0",
+  "description": "mern",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node backend/server",
+    "server": "nodemon backend/server",
+    "client": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run client\" "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChrisAchinga/mern-ecommerce.git"
+  },
+  "keywords": [
+    "react",
+    "javascript",
+    "node",
+    "express",
+    "mongodb"
+  ],
+  "author": "Chris Achinga",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ChrisAchinga/mern-ecommerce/issues"
+  },
+  "homepage": "https://github.com/ChrisAchinga/mern-ecommerce#readme",
+  "dependencies": {
+    "axios": "^0.21.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "nodemon": "^2.0.6"
+  }
+}
