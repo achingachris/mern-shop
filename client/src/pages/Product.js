@@ -14,7 +14,7 @@ const Product = ({ match }) => {
       setProduct(data)
     }
     fetchProduct()
-  }, [])
+  }, [match])
   return (
     <div>
       <Link to='/' className='btn btn-dark my-3'>

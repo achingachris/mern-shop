@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node server/server.js"
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "nodemon server/server.js",
+    "client": "npm start --prefix client"
   },
   "repository": {
     "type": "git",
@@ -21,6 +23,7 @@
     "express": "^4.17.1"
   },
   "devDependencies": {
+    "concurrently": "^6.0.1",
     "nodemon": "^2.0.7"
   }
 }
