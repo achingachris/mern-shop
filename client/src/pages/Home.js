@@ -1,11 +1,21 @@
+import {useState, useEffect} from 'react'
+import axios from 'axios'
 import { Row, Col } from 'react-bootstrap'
 import Header from '../components/Header'
 import Meta from '../components/Meta'
-
-import products from '../products'
 import Product from '../components/Product'
 
 const Home = () => {
+  const [products,setProducts] = useState([])
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      const {data} = await axios.get('/api/products')
+      setProducts(data)
+    }
+    fetchProducts()
+  }, [])
+
   // page content
   const pageTitle = 'Shopper Store'
   const pageDescription = 'The Store With Goods'
