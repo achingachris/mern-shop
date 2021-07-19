@@ -1,0 +1,22 @@
+{
+  "name": "mern-shop",
+  "version": "0.0.1",
+  "description": "mern stack",
+  "main": "server.js",
+  "scripts": {
+    "start": "node backend/server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/achingachris/mern-shop.git"
+  },
+  "author": "Chris Achinga",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/achingachris/mern-shop/issues"
+  },
+  "homepage": "https://github.com/achingachris/mern-shop#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
