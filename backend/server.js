@@ -1,7 +1,6 @@
 const express = require('express')
-const products = require('./data/products')
-
 const app = express()
+const products = require('./data/products')
 
 app.get('/', (req, res) => {
   res.send('API Successfully running')
@@ -17,4 +16,3 @@ app.get('/api/products/:id', (req, res) => {
 })
 
 app.listen(5000, console.log('Running on port 5000'))
-
