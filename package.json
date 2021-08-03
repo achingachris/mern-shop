@@ -1,9 +1,9 @@
 {
   "name": "mern-shop",
   "version": "0.0.1",
-  "type": "module",
   "description": "mern stack",
   "main": "server.js",
+  "type": "module",
   "scripts": {
     "start": "node backend/server",
     "server": "nodemon backend/server",
@@ -21,8 +21,10 @@
   },
   "homepage": "https://github.com/achingachris/mern-shop#readme",
   "dependencies": {
+    "colors": "^1.4.0",
     "dotenv": "^10.0.0",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "mongoose": "^5.13.5"
   },
   "devDependencies": {
     "concurrently": "^6.2.0",
