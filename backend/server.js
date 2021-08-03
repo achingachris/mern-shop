@@ -4,11 +4,11 @@ const products = require('./data/products')
 const app = express()
 
 app.get('/', (req, res) => {
-  res.send('API is running...')
+  res.send('API Successfully running')
 })
 
 app.get('/api/products', (req, res) => {
-  res.json(products)
+  res.send(products)
 })
 
 app.get('/api/products/:id', (req, res) => {
@@ -16,4 +16,5 @@ app.get('/api/products/:id', (req, res) => {
   res.json(product)
 })
 
-app.listen(5000, console.log('Server running on port 5000'))
+app.listen(5000, console.log('Running on port 5000'))
+
