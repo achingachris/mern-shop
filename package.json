@@ -1,10 +1,14 @@
 {
   "name": "mern-shop",
   "version": "0.0.1",
+  "type": "module",
   "description": "mern stack",
   "main": "server.js",
   "scripts": {
-    "start": "node backend/server"
+    "start": "node backend/server",
+    "server": "nodemon backend/server",
+    "client": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "repository": {
     "type": "git",
@@ -17,6 +21,11 @@
   },
   "homepage": "https://github.com/achingachris/mern-shop#readme",
   "dependencies": {
+    "dotenv": "^10.0.0",
     "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "concurrently": "^6.2.0",
+    "nodemon": "^2.0.12"
   }
 }
