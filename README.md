@@ -64,4 +64,10 @@ Create a `heroku-postbuild` script in `package.json`:
 
 Add environment variables to Heroku's Config Vars.
 
+## Bugs
 
+1. File Uploads
+
+## Working Updates
+
+1. Re-write on Typescript
