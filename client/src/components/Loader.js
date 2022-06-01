@@ -1,20 +1,16 @@
 import React from 'react'
-import { Spinner } from 'react-bootstrap'
+// import { Spinner } from 'react-bootstrap'
 
 const Loader = () => {
   return (
-    <Spinner
-      animation='border'
-      role='status'
-      style={{
-        width: '100px',
-        height: '100px',
-        margin: 'auto',
-        display: 'block',
-      }}
-    >
-      <span className='sr-only'>Loading...</span>
-    </Spinner>
+    <button className='btn btn-primary' type='button' disabled=''>
+      <span
+        className='spinner-grow spinner-grow-sm'
+        role='status'
+        aria-hidden='true'
+      />
+      Loading...
+    </button>
   )
 }
 
