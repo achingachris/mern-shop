@@ -30,9 +30,11 @@ const HomeScreen = ({ match }) => {
       {!keyword ? (
         <HomeHero />
       ) : (
-        <Link to='/' className='btn btn-light'>
-          Go Back
-        </Link>
+        <div className='container'>
+          <Link to='/' className='btn btn-light'>
+            Go Back
+          </Link>
+        </div>
       )}
       <Container>
         <h1>Latest Products</h1>
