@@ -2,7 +2,7 @@
 import React from 'react'
 import { LinkContainer } from 'react-router-bootstrap'
 import { useDispatch, useSelector } from 'react-redux'
-import { Nav, NavDropdown } from 'react-bootstrap'
+import { Nav } from 'react-bootstrap'
 import { logout } from '../actions/userActions'
 
 export const NavBar = () => {
@@ -14,6 +14,10 @@ export const NavBar = () => {
   const logoutHandler = () => {
     dispatch(logout())
   }
+
+  const cart = useSelector((state) => state.cart)
+  const { cartItems } = cart
+
   return (
     <nav className='navbar navbar-expand-lg navbar-light bg-light fixed-top mb-5'>
       <div className='container'>
@@ -38,7 +42,17 @@ export const NavBar = () => {
               <LinkContainer to='/cart'>
                 {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                 <a className='nav-link'>
-                  <i className='fas fa-shopping-cart'></i> Cart
+                  {/* {userInfo ? userInfo.name : <i className='fa fa-user'></i>} */}
+                  {userInfo ? (
+                    <>
+                      <i className='fas fa-shopping-cart'></i> Cart (
+                      {cartItems.reduce((acc, item) => acc + item.qty, 0)})
+                    </>
+                  ) : (
+                    <>
+                      <i className='fas fa-shopping-cart'></i> Cart
+                    </>
+                  )}
                 </a>
               </LinkContainer>
             </li>
