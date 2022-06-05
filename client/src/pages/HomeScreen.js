@@ -1,14 +1,15 @@
 import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import { Row, Col, Container } from 'react-bootstrap'
-import Product from '../components/Product'
+import { Container } from 'react-bootstrap'
 import Message from '../components/Message'
 import Loader from '../components/Loader'
 import Paginate from '../components/Paginate'
-import HomeHero from '../components/HomeHero'
 import Meta from '../components/Meta'
 import { listProducts } from '../actions/productActions'
+
+import Carousel from '../components/homePage/Carousel'
+import LatestProducts from '../components/homePage/LatestProducts'
 
 const HomeScreen = ({ match }) => {
   const keyword = match.params.keyword
@@ -18,7 +19,7 @@ const HomeScreen = ({ match }) => {
   const dispatch = useDispatch()
 
   const productList = useSelector((state) => state.productList)
-  const { loading, error, products, page, pages } = productList
+  const { loading, error, page, pages } = productList
 
   useEffect(() => {
     dispatch(listProducts(keyword, pageNumber))
@@ -28,11 +29,13 @@ const HomeScreen = ({ match }) => {
     <>
       <Meta />
       {!keyword ? (
-        <HomeHero />
+        <Carousel />
       ) : (
-        <Link to='/' className='btn btn-light'>
-          Go Back
-        </Link>
+        <div className='container'>
+          <Link to='/' className='btn btn-light'>
+            Go Back
+          </Link>
+        </div>
       )}
       <Container>
         <h1>Latest Products</h1>
@@ -42,13 +45,7 @@ const HomeScreen = ({ match }) => {
           <Message variant='danger'>{error}</Message>
         ) : (
           <>
-            <Row>
-              {products.map((product) => (
-                <Col key={product._id} sm={12} md={6} lg={3} xl={3}>
-                  <Product product={product} />
-                </Col>
-              ))}
-            </Row>
+            <LatestProducts />
             <Paginate
               pages={pages}
               page={page}
