@@ -1,3 +1,0 @@
-# The Shop Client
-
-React
