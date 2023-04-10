@@ -19,4 +19,13 @@ const users = [
   },
 ]
 
+for (let i = 1; i <= 100; i++) {
+  const newUser = {
+    name: `User ${i}`,
+    email: `user${i}@example.com`,
+    password: bcrypt.hashSync('123456', 10),
+  };
+  users.push(newUser);
+}
+
 export default users
